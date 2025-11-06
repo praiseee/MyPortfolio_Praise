@@ -1,12 +1,12 @@
-import './App.css'
-import Spline from '@splinetool/react-spline';
+import './App.css';
+import SplineProp from './components/Spline';
 
 function App() {
   return (
     <div className="">
-      <Spline scene="https://prod.spline.design/MCqyRCSm5hP4NmQB/scene.splinecode" />
+      <SplineProp />
     </div>
   );
 }
 
-export default App
+export default App;
