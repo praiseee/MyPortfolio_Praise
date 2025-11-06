@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react"
-import { motion, useInView } from "motion/react"
-import type { MotionProps } from "motion/react"
+import { motion } from "motion/react"
 import { cn } from "../../lib/utils"
 
-interface TypingAnimationProps extends MotionProps {
+interface TypingAnimationProps {
   children?: string
   words?: string[]
   className?: string
@@ -31,25 +30,15 @@ export function TypingAnimation({
   pauseDelay = 1000,
   loop = false,
   as: Component = "span",
-  startOnView = true,
+  startOnView = false, // set false for now
   showCursor = true,
   blinkCursor = true,
   cursorStyle = "line",
-  ...props
 }: TypingAnimationProps) {
-  const MotionComponent = motion.create(Component, {
-    forwardMotionProps: true,
-  })
-
   const [displayedText, setDisplayedText] = useState<string>("")
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const [currentCharIndex, setCurrentCharIndex] = useState(0)
   const [phase, setPhase] = useState<"typing" | "pause" | "deleting">("typing")
-  const elementRef = useRef<HTMLElement | null>(null)
-  const isInView = useInView(elementRef as React.RefObject<Element>, {
-    amount: 0.3,
-    once: true,
-  })
 
   const wordsToAnimate = useMemo(
     () => words || (children ? [children] : []),
@@ -60,19 +49,17 @@ export function TypingAnimation({
   const typingSpeed = typeSpeed || duration
   const deletingSpeed = deleteSpeed || typingSpeed / 2
 
-  const shouldStart = startOnView ? isInView : true
-
   useEffect(() => {
-    if (!shouldStart || wordsToAnimate.length === 0) return
+    if (wordsToAnimate.length === 0) return
 
     const timeoutDelay =
       delay > 0 && displayedText === ""
         ? delay
         : phase === "typing"
-          ? typingSpeed
-          : phase === "deleting"
-            ? deletingSpeed
-            : pauseDelay
+        ? typingSpeed
+        : phase === "deleting"
+        ? deletingSpeed
+        : pauseDelay
 
     const timeout = setTimeout(() => {
       const currentWord = wordsToAnimate[currentWordIndex] || ""
@@ -84,12 +71,7 @@ export function TypingAnimation({
             setDisplayedText(graphemes.slice(0, currentCharIndex + 1).join(""))
             setCurrentCharIndex(currentCharIndex + 1)
           } else {
-            if (hasMultipleWords || loop) {
-              const isLastWord = currentWordIndex === wordsToAnimate.length - 1
-              if (!isLastWord || loop) {
-                setPhase("pause")
-              }
-            }
+            if (hasMultipleWords || loop) setPhase("pause")
           }
           break
 
@@ -112,7 +94,6 @@ export function TypingAnimation({
 
     return () => clearTimeout(timeout)
   }, [
-    shouldStart,
     phase,
     currentCharIndex,
     currentWordIndex,
@@ -126,9 +107,7 @@ export function TypingAnimation({
     delay,
   ])
 
-  const currentWordGraphemes = Array.from(
-    wordsToAnimate[currentWordIndex] || ""
-  )
+  const currentWordGraphemes = Array.from(wordsToAnimate[currentWordIndex] || "")
   const isComplete =
     !loop &&
     currentWordIndex === wordsToAnimate.length - 1 &&
@@ -152,17 +131,13 @@ export function TypingAnimation({
     }
   }
 
+  const MotionComponent = motion(Component)
+
   return (
-    <MotionComponent
-      ref={elementRef}
-      className={cn("leading-[5rem] tracking-[-0.02em]", className)}
-      {...props}
-    >
+    <MotionComponent className={cn("inline-block", className)}>
       {displayedText}
       {shouldShowCursor && (
-        <span
-          className={cn("inline-block", blinkCursor && "animate-blink-cursor")}
-        >
+        <span className={cn(blinkCursor && "animate-blink-cursor")}>
           {getCursorChar()}
         </span>
       )}

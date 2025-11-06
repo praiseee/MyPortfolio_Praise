@@ -4,6 +4,7 @@ import { League_Spartan, Inter } from 'next/font/google'
 const leagueSpartan = League_Spartan({
   subsets: ['latin'],
   variable: '--font-league-spartan',
+  weight: ['400', '700']
 })
 
 const inter = Inter({
