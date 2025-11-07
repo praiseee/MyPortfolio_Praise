@@ -15,29 +15,29 @@ export default function NavBar() {
       {/* Logo / Home Button */}
       <a
         href="/"
-        className="flex items-center space-x-2 hover:scale-105 transition-transform"
+        className="flex items-center gap-2 hover:scale-105 transition-transform"
       >
         <Flower className="w-6 h-6 text-purple-500" />
         <span className="font-inter font-semibold text-[16px] text-white">Praise</span>
       </a>
 
       {/* Nav Links */}
-      <nav className="flex flex-row gap-6">
+      <nav className="flex flex-row gap-8">
         <a
           href="/projects"
-          className="font-inter text-[16px] text-white hover:scale-105 transition-transform font-semibold"
+          className="font-inter text-[14px] text-white hover:scale-105 transition-transform font-semibold"
         >
           Projects
         </a>
         <a
           href="/achievements"
-          className="font-inter text-[16px] text-white hover:scale-105 transition-transform font-semibold"
+          className="font-inter text-[14px] text-white hover:scale-105 transition-transform font-semibold"
         >
           Achievements
         </a>
         <a
           href="/exposure"
-          className="font-inter text-[16px] text-white hover:scale-105 transition-transform font-semibold"
+          className="font-inter text-[14px] text-white hover:scale-105 transition-transform font-semibold"
         >
           Exposure
         </a>

@@ -45,9 +45,7 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 820px;
+  min-width: 350px;
   min-height: 100vh;
   background: url('/background.png') no-repeat center center fixed;
   background-size: cover;
