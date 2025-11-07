@@ -1,10 +1,9 @@
 .star-border-container {
   display: inline-block;
   position: relative;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  background: #030303;
-}
+  background: transparent;}
 
 .border-gradient-bottom {
   position: absolute;
@@ -32,14 +31,19 @@
 
 .inner-content {
   position: relative;
-  border: 2px solid #222;
-  background: #000;
+  border: 0.5px solid #646cff;
+  background: transparent;  
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
-  padding: 6px 26px;
-  border-radius: 12px;
+  padding: 10px 14px;
+  border-radius: 20px;
   z-index: 1;
+}
+
+.star-border-container:hover .inner-content {
+  border-color: white;
+  transition: border-color 0.3s ease;
 }
 
 @keyframes star-movement-bottom {
