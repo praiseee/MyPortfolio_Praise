@@ -13,10 +13,10 @@ function App() {
       <NavBar />
 
       {/* AboveFold */}
-      <div className="flex flex-row justify-start above-fold">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[110vh] above-fold">
         {/* Left Section */}
-        <div className="flex flex-col items-start justify-start px-24">
-          <div className="mt-40">
+        <div className="flex flex-col items-start justify-center px-28 h-[820px]">
+          <div className="">
             <h1 className="font-league font-bold text-white">
               Hello! I am Praise
             </h1>
@@ -36,7 +36,7 @@ function App() {
 
           <p className="text-gray-400 text-[14px] pt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quam
-            odio, ornare et nisi at,
+            odio, ornare et nisi at, consectetur adipiscing elit. Sed quam ipsum dolor sit amet
           </p>
 
           <div className="flex gap-2 pt-4">
@@ -61,7 +61,7 @@ function App() {
       </div>
 
       {/* Tech Stack */}
-      <h2 className="flex items-center justify-center py-2 text-white text-2xl font-bold">
+      <h2 className="flex items-center justify-center py-2 text-white text-2xl font-semibold">
         Tech Stack
       </h2>
     </div>
