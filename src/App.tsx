@@ -56,14 +56,20 @@ function App() {
 
         {/* Right Section */}
         <div className="flex items-center justify-center overflow-hidden">
-          <Spline scene="https://prod.spline.design/MCqyRCSm5hP4NmQB/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/MCqyRCSm5hP4NmQB/scene.splinecode" />
         </div>
       </div>
 
       {/* Tech Stack */}
-      <h2 className="flex items-center justify-center py-2 text-white text-2xl font-semibold">
-        Tech Stack
-      </h2>
+      <div className='flex flex-col'>
+        <h2 className="flex items-center justify-center py-2 text-white text-2xl font-semibold">
+          Tech Stack
+        </h2>
+        
+        <div>
+          <Spline scene="https://prod.spline.design/dHYqq0VC0w0yQC4i/scene.splinecode" />
+        </div>
+      </div>
     </div>
   );
 }
