@@ -15,8 +15,8 @@ function App() {
       {/* AboveFold */}
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[110vh] above-fold">
         {/* Left Section */}
-        <div className="flex flex-col items-start justify-center px-28 h-[820px]">
-          <div className="">
+        <div className="flex flex-col items-start justify-center px-24 h-[820px]">
+          <div>
             <h1 className="font-league font-bold text-white">
               Hello! I am Praise
             </h1>
@@ -62,11 +62,11 @@ function App() {
 
       {/* Tech Stack */}
       <div className='flex flex-col'>
-        <h2 className="flex items-center justify-center py-2 text-white text-2xl font-semibold">
+        <h2 className="flex items-center justify-center text-white text-3xl font-bold">
           Tech Stack
         </h2>
         
-        <div>
+        <div className='h-[620px]'>
           <Spline scene="https://prod.spline.design/dHYqq0VC0w0yQC4i/scene.splinecode" />
         </div>
       </div>
