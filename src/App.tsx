@@ -1,19 +1,29 @@
 import './App.css';
-import { TypingAnimation } from './components/ui/typing-animation';
 import StarBorder from './components/StarBorder.jsx';
+import { TypingAnimation } from './components/ui/typing-animation';
 import { MarkGithubIcon, FileIcon } from '@primer/octicons-react';
-import NavBar from './components/NavBar.tsx';
+import FloatingLines from './components/FloatingLines';
 import Spline from '@splinetool/react-spline';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="app-page min-h-screen overflow-hidden">
+    <div className="app-page min-h-screen overflow-hidden relative">
+
+      {/* Floating Background Lines */}
+      <div className="absolute top-[-500px] left-0 right-0 bottom-0 -z-10 opacity-25">
+        <FloatingLines
+          lineCount={2}
+          animationSpeed={1}
+        />
+      </div>
 
       {/* NavBar */}
       <NavBar />
 
       {/* AboveFold */}
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-[110vh] above-fold">
+
         {/* Left Section */}
         <div className="flex flex-col items-start justify-center px-24 h-[820px]">
           <div>
@@ -40,36 +50,37 @@ function App() {
           </p>
 
           <div className="flex gap-2 pt-4">
-            <StarBorder as="button" color="purple" speed="3s" aria-label="Download Resume">
-              <FileIcon size={16} />
+            <StarBorder as="button" color="purple" speed="3s" aria-label="Resume">
+              <FileIcon size={14} />
             </StarBorder>
 
             <StarBorder as="button" color="purple" speed="3s" aria-label="GitHub">
-              <MarkGithubIcon size={16} />
+              <MarkGithubIcon size={14} />
             </StarBorder>
 
             <StarBorder as="button" color="purple" speed="3s" aria-label="LinkedIn">
-              Linkedin
+              <MarkGithubIcon size={14} />
             </StarBorder>
           </div>
         </div>
 
         {/* Right Section */}
         <div className="flex items-center justify-center overflow-hidden">
-        <Spline scene="https://prod.spline.design/MCqyRCSm5hP4NmQB/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/dHYqq0VC0w0yQC4i/scene.splinecode" />
         </div>
       </div>
 
       {/* Tech Stack */}
-      <div className='flex flex-col'>
-        <h2 className="flex items-center justify-center text-white text-3xl font-bold">
-          Tech Stack
+      <div className="flex flex-col">
+        <h2 className="flex items-center justify-center text-white text-3xl font-bold py-2">
+          Projects
         </h2>
-        
-        <div className='h-[620px]'>
-          <Spline scene="https://prod.spline.design/dHYqq0VC0w0yQC4i/scene.splinecode" />
-        </div>
+
+        <p className="flex items-center justify-center text-gray-500 text-md pb-54">
+          Explore my projects and technical expertise. Each section a milestone of my continuous learning journey.
+        </p>
       </div>
+
     </div>
   );
 }

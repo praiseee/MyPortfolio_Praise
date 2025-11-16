@@ -38,7 +38,6 @@
   text-align: center;
   padding: 10px 14px;
   border-radius: 20px;
-  z-index: 1;
 }
 
 .star-border-container:hover .inner-content {
