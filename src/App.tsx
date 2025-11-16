@@ -5,6 +5,7 @@ import { MarkGithubIcon, FileIcon } from '@primer/octicons-react';
 import FloatingLines from './components/FloatingLines';
 import Spline from '@splinetool/react-spline';
 import NavBar from './components/NavBar';
+import CardProps from './components/Tab';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           </div>
 
           <TypingAnimation
-            words={['Lorem Ipsum', 'Lorem Lorem Ipsum', 'Ipsum']}
+            words={['Front-end Developer', 'UI/UX Designer', '3D Modeller']}
             className="text-purple-600 font-inter font-bold py-2 text-4xl"
             loop={true}
             typeSpeed={30}
@@ -70,15 +71,17 @@ function App() {
         </div>
       </div>
 
-      {/* Tech Stack */}
+      {/* Journey */}
       <div className="flex flex-col">
-        <h2 className="flex items-center justify-center text-white text-3xl font-bold py-2">
-          Projects
+        <h2 className="flex items-center justify-center text-white text-3xl font-bold pb-2">
+          My Journey
         </h2>
 
-        <p className="flex items-center justify-center text-gray-500 text-md pb-54">
+        <p className="flex items-center justify-center text-gray-500 text-md">
           Explore my projects and technical expertise. Each section a milestone of my continuous learning journey.
         </p>
+
+        <CardProps/>
       </div>
 
     </div>
