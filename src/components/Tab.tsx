@@ -9,12 +9,12 @@ interface CardProps {
 
 const data = {
   projects: [
-    { img:'/background.png', title: "Zenify", desc: "Description for project 1", link: "#" },
-    { img: '/background.png', title: "Project 2", desc: "Description for project 2", link: "#" },
-    { img: '/background.png', title: "Project 3", desc: "Description for project 3", link: "#" },
-    { img:'/background.png', title: "Zenify", desc: "Description for project 1", link: "#" },
-    { img: '/background.png', title: "Project 2", desc: "Description for project 2", link: "#" },
-    { img: '/background.png', title: "Project 3", desc: "Description for project 3", link: "#" },
+    { img:'/scifi.png', title: "Sci-Fi Corridor - Unity 3D", desc: "Description for project 1", link: "#" },
+    { img: '/ferrucis.png', title: "Meet the Ferrucis - Unity Games", desc: "You are Detective Callahan, famed for solving complex cases. Your latest assignment comes from a wealthy family in panic: their matriarch’s body was found outside their mansion, with no witnesses or unusual activity. The family desperately seeks your expertise to uncover the murderer within their circle.", link: "#" },
+    { img: '/winter.png', title: "Winter Island - Unity 3D", desc: "Description for project 3", link: "#" },
+    { img:'/zenify.png', title: "Zenify - Mobile App", desc: "Zenify is a wellness app designed to support mental and physical health by helping users understand stress and anxiety while cultivating healthy coping mechanisms. Building on the growing demand for wellbeing solutions since the COVID-19 pandemic, Zenify offers a range of features to help users achieve balance and maintain relevance in a post-pandemic world.", link: "#" },
+    { img: '/phone.png', title: "Meet the Ferrucis - Mobile App", desc: "Description for project 2", link: "#" },
+    { img: '/background.png', title: "Hubql (UI Engineer) - Web", desc: "Description for project 3", link: "#" },
   ],
   skills: [
     { img: "#", title: "Skill 1", desc: "Description for skill 1", link: "#" },
@@ -69,18 +69,17 @@ export default function CustomTabs() {
 
 function Card({ img, title, desc, link }: CardProps) {
   return (
-    <div className="bg-muted/1 rounded-md p-4 flex flex-col gap-3">
-      <div className="h-46 bg-muted rounded-md flex items-center justify-center overflow-hidden">
-        <img src={img} alt={title} className="object-cover w-full h-full" />
-      </div>
+    <div className="bg-muted/1 rounded-md p-4 flex flex-col">
+        <div className="h-58 bg-muted rounded-md flex items-center justify-center overflow-hidden">
+            <img src={img} alt={title} className="object-cover w-full h-full" />
+        </div>
 
-      <h3 className="text-md font-semibold">{title}</h3>
-
-      <p className="text-[12px] text-muted-foreground">{desc}</p>
-
-      <a href={link} className="text-white text-[12px] hover:underline mt-auto">
-        View More
-      </a>
+        <h3 className="text-md font-semibold pt-2">{title}</h3>
+    
+        <p className="text-[12px] text-muted-foreground pt-2">{desc}</p>
+        <a href={link} className="text-white text-[12px] hover:underline mt-auto pt-2">
+            View More
+        </a>
     </div>
   );
 }

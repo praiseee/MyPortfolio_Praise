@@ -78,7 +78,7 @@ function App() {
         </h2>
 
         <p className="flex items-center justify-center text-gray-500 text-md">
-          Explore my projects and technical expertise. Each section a milestone of my continuous learning journey.
+          ˚₊‧༉❀ Explore my projects and technical expertise. Each section a milestone of my continuous learning journey. ❀༉‧₊˚
         </p>
 
         <CardProps/>
