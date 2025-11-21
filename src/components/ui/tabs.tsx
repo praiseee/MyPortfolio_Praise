@@ -11,7 +11,7 @@ function Tabs({
       data-slot="tabs"
       className={cn(
         "flex flex-col gap-2 text-white",
-        "w-full max-w-[1350px] mx-auto px-2 py-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10 shadow-lg",
+        "w-full max-w-[1350px] mx-auto px-2 py-2 bg-white/ rounded-lg border border-white/10 shadow-lg",
         className
       )}
       {...props}
